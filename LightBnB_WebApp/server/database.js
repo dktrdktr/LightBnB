@@ -134,8 +134,7 @@ const getAllProperties = function (options, limit = 10) {
   // 5
   if (options.minimum_rating) {
     queryParams.push(`${options.minimum_rating}`);
-    queryString += "HAVING ";
-    queryString += `avg(property_reviews.rating) >= $${queryParams.length}`;
+    queryString += `HAVING avg(property_reviews.rating) >= $${queryParams.length}`;
   }
 
   // 6
